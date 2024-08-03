@@ -100,6 +100,10 @@ header {
         transition: left 0.3s ease;
     }
 
+    body{
+        background: url(./small.jpg);
+    }
+
     .navigation ul.active {
         left: 0;
     }
@@ -191,7 +195,7 @@ header {
 
 .form-box h2 {
     font-size: 2em;
-    color: #162938;
+    color: #fff;
     text-align: center;
 }
 
@@ -209,7 +213,7 @@ header {
     left: 5px;
     transform: translateY(-50%);
     font-size: 1em;
-    color: #162938;
+    color: #fff;
     font-weight: 500;
     pointer-events: none;
     transition: 0.5s;
@@ -227,7 +231,7 @@ header {
     border: none;
     outline: none;
     font-size: 1em;
-    color: #162938;
+    color: #fff;
     font-weight: 600;
     padding: 0 35px 0 5px;
 }
@@ -236,13 +240,13 @@ header {
     position: absolute;
     right: 8px;
     font-size: 1.2em;
-    color: #162938;
+    color: #fff;
     line-height: 57px;
 }
 
 .remember-forgot {
     font-size: 0.9em;
-    color: #162938;
+    color: #fff;
     font-weight: 500;
     margin: -15px 0 15px;
     display: flex;
@@ -250,7 +254,7 @@ header {
 }
 
 .remember-forgot a {
-    color: #162938;
+    color: #fff;
     text-decoration: none;
     font-weight: 600;
 }
@@ -278,14 +282,14 @@ header {
 
 .login-register {
     font-size: 0.9em;
-    color: #162938;
+    color: #fff;
     text-align: center;
     font-weight: 500;
     margin: 25px 0 10px;
 }
 
 .login-register p a {
-    color: #162938;
+    color: #fff;
     text-decoration: none;
     font-weight: 600;
 }
