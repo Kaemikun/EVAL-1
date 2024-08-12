@@ -15,6 +15,8 @@ body {
     background: url('wallpaperflare.com_wallpaper.jpg') no-repeat;
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
+    scroll-behavior: smooth;
 }
 
 header {
@@ -101,7 +103,8 @@ header {
     }
 
     body{
-        background: url(./small.jpg);
+        background: url(./small.jpg) no-repeat;
+        background-size: cover;
     }
 
     .navigation ul.active {
@@ -349,3 +352,5 @@ header {
     background: #ffff;
     color: #162938;
 }
+
+
