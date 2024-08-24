@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Stream</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <link rel="stylesheet" href="styles1.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: url('wallpaperflare.com_wallpaper.jpg') no-repeat center center/cover;
+            background-attachment: fixed;
+            scroll-behavior: smooth;
+            color: #ffffff;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            backdrop-filter: blur(10px); /* Adjust the blur level as needed */
+            background: rgba(0, 0, 0, 0.5); /* Optional: Darken the background slightly */
+            z-index: 1;
+        }
+
+        .container {
+            position: relative;
+            z-index: 2;
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .video-section {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            background-color: #000;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            margin-top: 100px;
+        }
+
+        video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+        }
+
+        .title-section {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .title-section h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        .title-section p {
+            font-size: 1.1rem;
+            margin: 10px 0;
+            color: #b3b3b3;
+        }
+
+        .episode-list {
+            margin-top: 20px;
+        }
+
+        .episode-list h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .episode-list ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .episode-list li {
+            width: 100%;
+            max-width: 600px;
+            padding: 10px 20px;
+            border: 1px solid #333;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: left;
+            margin: 10px 0;
+            transition: border-color 0.3s, color 0.3s;
+        }
+
+        .episode-list li:hover {
+            border-color: #5B3256;
+            color: #5B3256;
+        }
+
+        @media (min-width: 768px) {
+            .title-section h1 {
+                font-size: 3rem;
+            }
+
+            .episode-list ul {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .episode-list li {
+                width: 45%;
+                margin: 10px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .title-section h1 {
+                font-size: 3.5rem;
+            }
+
+            .episode-list ul {
+                justify-content: flex-start;
+            }
+
+            .episode-list li {
+                width: 30%;
+                margin: 10px;
+            }
+        }
+
+        /* Comment Section Styles */
+        .comment-section {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: rgba(91, 50, 86, 0.9); /* Slightly transparent background to match design */
+            border-radius: 10px;
+            color: #ffffff;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .comment-section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #e50914; /* Match the hover color */
+        }
+
+        .comment-form {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 30px;
+        }
+
+        .comment-form textarea {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #162938;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            resize: none;
+            min-height: 100px;
+            margin-bottom: 10px;
+            font-size: 1em;
+            width: 100%;
+            transition: border 0.3s;
+        }
+
+        .comment-form textarea:focus {
+            border-color: #e50914;
+        }
+
+        .comment-form button {
+            align-self: flex-end;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #e50914;
+            color: #ffffff;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s;
+        }
+
+        .comment-form button:hover {
+            background-color: #d40813;
+        }
+
+        .comment-list .comment {
+            padding: 15px;
+            border-bottom: 1px solid #333;
+            margin-bottom: 10px;
+        }
+
+        .comment-list .comment p {
+            margin: 0;
+            font-size: 1em;
+        }
+
+        .comment-list .comment .comment-author {
+            font-weight: bold;
+            margin-right: 10px;
+            color: #e50914;
+        }
+
+        .comment-list .comment .comment-time {
+            color: #b3b3b3;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h2 class="logo">ANIMAX</h2>
+        <nav class="navigation">
+            <ul id="menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+                <!-- <li><button class="btnLogin-popup">Login</button></li> -->
+            </ul>
+            <div class="menu-toggle" id="menuToggle">
+                <ion-icon name="menu"></ion-icon>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="video-section">
+            <video controls>
+                <!-- Replace this URL with your actual online video URL -->
+                <source src="videoplayback.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <div class="title-section">
+            <h1>Episode Title</h1>
+            <p>Season 1, Episode 1</p>
+            <p>A brief description of the episode goes here.</p>
+        </div>
+
+        <div class="episode-list">
+            <h2>More Episodes</h2>
+            <ul>
+                <li>Episode 2: Another Episode</li>
+                <li>Episode 3: Yet Another Episode</li>
+                <li>Episode 4: The Story Continues</li>
+            </ul>
+        </div>
+
+        <!-- Comment Section -->
+        <div class="comment-section">
+            <h2>Comments</h2>
+            <div class="comment-form">
+                <textarea placeholder="Add a comment..."></textarea>
+                <button type="button">Submit</button>
+            </div>
+            <div class="comment-list">
+                <div class="comment">
+                    <p><span class="comment-author">User1:</span> This episode was amazing!</p>
+                    <p class="comment-time">5 minutes ago</p>
+                </div>
+                <div class="comment">
+                    <p><span class="comment-author">User2:</span> Can't wait for the next one!</p>
+                    <p class="comment-time">10 minutes ago</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+    const menu = document.getElementById('menu');
+
+    menuToggle.addEventListener('click', () => {
+    menu.classList.toggle('active');
+});
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
