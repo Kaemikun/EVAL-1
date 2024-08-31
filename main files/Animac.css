@@ -559,3 +559,88 @@ footer{
   background: #ffff;
   color: #162938;
 }
+
+
+/* drop down menu by legendary ansh :)) */
+
+.genre-dropdown {
+  position: relative;
+}
+
+.genre-dropdown .dropdown-toggle {
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  display: block;
+  font-size: 16px;
+  /* font-weight: bold; */
+  transition: background-color 0.3s ease;
+}
+
+.genre-dropdown .dropdown-menu {
+  display: none; 
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #130f2f;
+  list-style: none;
+  /* padding: 10px 0; */
+  margin: 0;
+  min-width: 180px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+  transform: translateY(10px);
+}
+
+.genre-dropdown .dropdown-menu li {
+  margin: 0;
+}
+
+.genre-dropdown .dropdown-menu li a {
+  color: white;
+  padding: 10px 20px;
+  display: block;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.genre-dropdown .dropdown-menu li a:hover {
+  background-color: #575757;
+  color: #ffcc00; /* Highlight color */
+}
+
+
+.genre-dropdown:hover .dropdown-menu {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+
+.genre-dropdown .dropdown-toggle:hover {
+  background-color: #575757;
+  border-radius: 4px;
+}
+
+
+.genre-dropdown .dropdown-toggle,
+.genre-dropdown .dropdown-menu li a {
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .genre-dropdown .dropdown-menu {
+      display: none !important; 
+  }
+
+  /*agr genre wala button hi htana h to isko comment out krdena*/
+  /* .genre-dropdown {
+      display: none; 
+  } */
+}

@@ -19,24 +19,24 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background: url('wallpaperflare.com_wallpaper.jpg') no-repeat center center/cover;
+            background: url('back.jpg') no-repeat center center/cover;
             background-attachment: fixed;
             scroll-behavior: smooth;
             color: #ffffff;
             position: relative;
         }
 
-        body::before {
+        /* body::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            backdrop-filter: blur(10px); /* Adjust the blur level as needed */
-            background: rgba(0, 0, 0, 0.5); /* Optional: Darken the background slightly */
+            backdrop-filter: blur(10px); 
+            background: rgba(0, 0, 0, 0.5); 
             z-index: 1;
-        }
+        } */
 
         .container {
             position: relative;
@@ -50,7 +50,7 @@
         .video-section {
             position: relative;
             width: 100%;
-            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            padding-top: 56.25%; 
             background-color: #000;
             border-radius: 10px;
             box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
@@ -150,11 +150,11 @@
             }
         }
 
-        /* Comment Section Styles */
+        
         .comment-section {
             margin-top: 40px;
             padding: 20px;
-            background-color: rgba(91, 50, 86, 0.9); /* Slightly transparent background to match design */
+            background-color: rgba(19, 31, 47, 0.9); 
             border-radius: 10px;
             color: #ffffff;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
@@ -164,7 +164,7 @@
             font-size: 2em;
             margin-bottom: 20px;
             text-align: center;
-            color: #e50914; /* Match the hover color */
+            color: #5B3256; 
         }
 
         .comment-form {
@@ -188,7 +188,7 @@
         }
 
         .comment-form textarea:focus {
-            border-color: #e50914;
+            border-color: #5B3256;
         }
 
         .comment-form button {
@@ -196,7 +196,7 @@
             padding: 10px 20px;
             border: none;
             border-radius: 5px;
-            background-color: #e50914;
+            background-color: #5B3256;
             color: #ffffff;
             cursor: pointer;
             font-size: 1em;
@@ -204,7 +204,7 @@
         }
 
         .comment-form button:hover {
-            background-color: #d40813;
+            background-color: #5B3256;
         }
 
         .comment-list .comment {
@@ -221,7 +221,7 @@
         .comment-list .comment .comment-author {
             font-weight: bold;
             margin-right: 10px;
-            color: #e50914;
+            color: #5B3256;
         }
 
         .comment-list .comment .comment-time {
@@ -232,19 +232,39 @@
 </head>
 <body>
     <header>
-        <h2 class="logo"><a href="YuruWatch.html"><img src="WhatsApp_Image_2024-08-29_at_23.40.32_04afab5b-removebg-preview.png" style="height: 7vh;"></a></h2>
+        <h2 class="logo">
+            <a href="YuruWatch.html">
+                <img src="WhatsApp_Image_2024-08-29_at_23.40.32_04afab5b-removebg-preview.png" style="height: 7vh;">
+            </a>
+        </h2>
         <nav class="navigation">
             <ul id="menu">
                 <li><a href="YuruWatch.html">Home</a></li>
                 <li><a href="#">Community</a></li>
-                <li><a href="#">Genre</a></li>
+                <li class="genre-dropdown">
+                    <a href="#" class="dropdown-toggle">Genre</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Adventure</a></li>
+                        <li><a href="#">Comedy</a></li>
+                        <li><a href="#">Drama</a></li>
+                        <li><a href="#">Fantasy</a></li>
+                        <li><a href="#">Horror</a></li>
+                        <li><a href="#">Mystery</a></li>
+                        <li><a href="#">Romance</a></li>
+                        <li><a href="#">Sci-Fi</a></li>
+                        <li><a href="#">Slice of Life</a></li>
+                        <li><a href="#">Sports</a></li>
+                        <li><a href="#">Thriller</a></li>
+                    </ul>
+                </li>
                 <li>
                     <div class="search-bar">
                         <input type="text" placeholder="Search...">
                         <span class="search-icon"><ion-icon name="search"></ion-icon></span>
                     </div>
                 </li>
-                <li><img src="iccon-removebg-preview.png"></li>
+                <li><img src="iccon-removebg-preview.png" alt="Icon"></li>
             </ul>
             <div class="menu-toggle" id="menuToggle">
                 <ion-icon name="menu"></ion-icon>
@@ -263,6 +283,7 @@
 
         <div class="title-section">
             <h1>Rimuru vs Hinata</h1>
+            <h2>That Time I Got Reincarnated as a Slime</h2>
             <p>Season 3, Episode 1</p>
             <p>Season 3 of That Time I Got Reincarnated as a Slime aired on April 5, 2024 on Nippon TV and its affiliates, as well as BS11. The staff from the second season and the Visions of Coleus ONA series returned to reprise their roles.</p>
         </div>
