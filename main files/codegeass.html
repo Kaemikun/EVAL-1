@@ -260,11 +260,18 @@
                 </li>
                 <li>
                     <div class="search-bar">
-                        <input type="text" placeholder="Search...">
+                        <input type="list" list = "browsers" placeholder="Search..." onchange="location = this.value;">
+                        <datalist id="browsers">
+                          <option value="codegeass.html">Code Geass</option>
+                          <option value="rimuru.html">That time I got reincarnated as a Slime</option>
+                          <option value="aot.html">Attack On Titans</option>
+                          <option value="yourname.html">Your Name</option>
+                          <!-- <option value="Safari"> -->
+                        </datalist>
                         <span class="search-icon"><ion-icon name="search"></ion-icon></span>
                     </div>
                 </li>
-                <li><img src="iccon-removebg-preview.png" alt="Icon"></li>
+                <li><a href="#"><img src="iccon-removebg-preview.png" alt="Icon"></li></a>
             </ul>
             <div class="menu-toggle" id="menuToggle">
                 <ion-icon name="menu"></ion-icon>

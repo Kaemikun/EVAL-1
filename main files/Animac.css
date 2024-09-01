@@ -481,7 +481,7 @@ footer{
 }
 
 
-.search-bar input[type="text"] {
+.search-bar input[type="list"] {
   width: 150%;
   padding: 10px 15px 10px 40px; 
   border: none;
@@ -502,7 +502,7 @@ footer{
   pointer-events: none; 
 }
 
-.search-bar input[type="text"]:focus {
+.search-bar input[type="list"]:focus {
   box-shadow: 0 0 8px rgba(0, 123, 255, 0.5); 
 }
 
