@@ -405,7 +405,7 @@ header {
     padding: 10px 15px;
     display: block;
     font-size: 16px;
-    /* font-weight: bold; */
+   
     transition: background-color 0.3s ease;
   }
   
@@ -416,7 +416,7 @@ header {
     left: 0;
     background-color: #130f2f;
     list-style: none;
-    /* padding: 10px 0; */
+    
     margin: 0;
     min-width: 180px;
     border-radius: 8px;
@@ -443,7 +443,7 @@ header {
   
   .genre-dropdown .dropdown-menu li a:hover {
     background-color: #575757;
-    color: #ffcc00; /* Highlight color */
+    color: #ffcc00; 
   }
   
   
