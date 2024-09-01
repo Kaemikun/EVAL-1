@@ -1,0 +1,351 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+  background: url('./Untitled\ design.jpg') no-repeat center center/cover;
+            background-attachment: fixed;
+}
+
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #130f2f;
+  /* opacity: 0.8; */
+  z-index: 99;
+}
+
+.logo {
+  font-size: 2em;
+  color: #ffffff;
+  user-select: none;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+}
+
+.navigation ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.navigation ul li {
+  margin-left: 40px;
+}
+
+.navigation a,
+.btnLogin-popup {
+  font-size: 1em;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btnLogin-popup {
+  width: 120px;
+  height: 45px;
+  background: transparent;
+  border: 2px solid #ffffff;
+  border-radius: 6px;
+}
+
+.btnLogin-popup:hover {
+  background: #ffffff;
+  color: #162938;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 2em;
+  color: #ffffff;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+@media (max-width: 768px) {
+  .navigation ul {
+      position: absolute;
+      top: 80px;
+      left: -100%;
+      width: 100%;
+      height: 100vh;
+      background-color: #130f2f;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: left 0.3s ease;
+  }
+
+  /* body{
+      background: url(./small.jpg) no-repeat;
+      background-size: cover;
+  } */
+
+  .navigation ul.active {
+      left: 0;
+  }
+
+  .navigation ul li {
+      margin: 20px 0;
+  }
+
+  .menu-toggle {
+      display: block;
+  }
+
+  .btnLogin-popup {
+      margin-top: 20px;
+  }
+}
+
+.genre-dropdown {
+    position: relative;
+  }
+  
+  .genre-dropdown .dropdown-toggle {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    font-size: 16px;
+    /* font-weight: bold; */
+    transition: background-color 0.3s ease;
+  }
+  
+  .genre-dropdown .dropdown-menu {
+    display: none; 
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #130f2f;
+    list-style: none;
+    /* padding: 10px 0; */
+    margin: 0;
+    min-width: 180px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    transform: translateY(10px);
+  }
+  
+  .genre-dropdown .dropdown-menu li {
+    margin: 0;
+  }
+  
+  .genre-dropdown .dropdown-menu li a {
+    color: white;
+    padding: 10px 20px;
+    display: block;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .genre-dropdown .dropdown-menu li a:hover {
+    background-color: #575757;
+    color: #ffcc00; /* Highlight color */
+  }
+  
+  
+  .genre-dropdown:hover .dropdown-menu {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  
+  
+  .genre-dropdown .dropdown-toggle:hover {
+    background-color: #575757;
+    border-radius: 4px;
+  }
+  
+  
+  .genre-dropdown .dropdown-toggle,
+  .genre-dropdown .dropdown-menu li a {
+    transition: all 0.3s ease;
+  }
+  
+  @media (max-width: 768px) {
+    .genre-dropdown .dropdown-menu {
+        display: none !important; 
+    }
+}
+
+.search-bar {
+    position: relative;
+    margin-left: 5vh;
+    display: flex;
+    align-items: center;
+    width: 250px; 
+    border-radius: 25px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    overflow: hidden; 
+  }
+  
+  
+  .search-bar input[type="text"] {
+    width: 150%;
+    padding: 10px 15px 10px 40px; 
+    border: none;
+    outline: none;
+    border-radius: 25px; 
+    font-size: 14px; 
+    transition: box-shadow 0.3s ease; 
+  }
+  
+  
+  .search-icon {
+    position: absolute;
+    /* left: 10px;  */
+    color: #888;
+    background-color: #f0f0f0; 
+    padding: 5px; 
+    border-radius: 50%; 
+    pointer-events: none; 
+  }
+  
+  .search-bar input[type="text"]:focus {
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5); 
+  }
+  
+  /*lets try this*/
+  /* navigation hover */
+  .navigation a{
+    position: relative;
+    font-size: 1.1em;
+    color: #ffff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+  }
+  
+  .navigation a::after {
+  
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    left:0;
+    bottom: -6px;
+    
+    background: #ffff;
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform 0.5s;
+  
+  }
+  
+  .navigation a:hover::after{
+    transform-origin: left;
+    transform: scaleX(1);
+  }
+
+  .left-top{
+    background-color: #130f2f;
+  }
+
+  .left-top img{
+    justify-self: center;
+  }
+
+  .left-top h2{
+    text-align: center;
+    padding: 10px;
+    color: #ffffff;
+  }
+
+  .menuacc{
+    text-align: left;
+    color: #ffffff;
+    padding: 10px;
+  }
+
+  .menuacc button{
+    cursor: pointer;
+    width: 100%;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 5px;
+    font-size: x-large;
+    background-color: #130f2f;
+    color: #ffffff;
+  }
+
+  .left-side{ 
+    float: left;   
+    width: 30%;
+    height: 85.5vh;
+    padding: 15px;
+    background-color: #130f2fa5;
+  }
+
+  .right-side{
+    height: 82vh;
+    margin: 10px;
+    float: right;
+    width: 68%;
+    color: #ffffff;
+    background-color: #130f2f81;
+    border-radius: 10px;
+  }
+
+
+  .hidden {
+    display: none;
+  }
+  
+#div1{
+    margin: 10px;
+}
+
+#div2{
+  margin: 10px;
+}
+
+#div3{
+  margin: 10px;
+}
+
+#div4{
+  margin: 10px;
+}
+
+#div5{
+  margin: 10px;
+}
+
+@media (max-width: 1000px) {
+  .left-side{
+    width: 100%;
+  }
+
+  .right-side{
+    width: 100%;
+  }
+}
