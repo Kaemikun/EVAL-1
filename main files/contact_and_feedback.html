@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+    <link rel="stylesheet" href="pro.css">
+</head>
+<body>
+    <div class="form-container">
+        <h2>Your Feedback Is Important For Us</h2>
+        <form id="feedbackForm">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" placeholder="Enter Your Name">
+                <span class="error" id="nameError"></span>
+            </div>
+            <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" id="email" placeholder="Enter email">
+                <span class="error" id="emailError"></span>
+            </div>
+            <div class="form-group">
+                <label for="contact">Contact Number (Optional)</label>
+                <input type="text" id="contact" placeholder="Enter contact number">
+            </div>
+            <div class="form-group">
+                <label for="anime">Favorite Anime</label>
+                <select id="anime">
+                    <option value="naruto">Naruto</option>
+                    <option value="attack-on-titan">Attack on Titan</option>
+                    <option value="my-hero-academia">My Hero Academia</option>
+                    <option value="one-piece">One Piece</option>
+                    <option value="death-note">Death Note</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="recommendation">Recommend Anime</label>
+                <input type="text" id="recommendation" placeholder="Recommend an anime">
+                <span class="error" id="recommendationError"></span>
+            </div>
+            <div class="form-group">
+                <label for="feedback">Feedback</label>
+                <textarea id="feedback" placeholder="Enter your feedback"></textarea>
+                <span class="error" id="feedbackError"></span>
+            </div>
+            <button type="submit">Post Comment</button>
+        </form>
+    </div>
+
+
+    
+
+    <script src="proj.js"></script>
+</body>
+</html>
