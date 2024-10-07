@@ -96,13 +96,13 @@
 
     <script>
         function switchDiv(divId) {
-            // Hide all divs
+         
             const divs = document.querySelectorAll('div[id^="div"]');
             divs.forEach(div => {
               div.classList.add('hidden');
             });
       
-            // Show the selected div
+
             document.getElementById(divId).classList.remove('hidden');
           }
     </script>

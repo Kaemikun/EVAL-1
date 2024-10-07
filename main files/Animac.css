@@ -307,6 +307,12 @@ header {
     display: grid;
     grid-template-columns: 50px 120px 150px;
   }
+
+  .position1{
+      margin-left: 20px;
+      display: grid;
+      grid-template-columns: 50px 120px 150px;
+  }
   
   
   .limage{
@@ -340,6 +346,9 @@ header {
 }
 
 @media (max-width: 768px){
+  .position1{
+    margin-top: 50px;
+  }
   .main-grid{
     display: block;
     padding: 10px;
@@ -628,7 +637,7 @@ footer{
 
 .genre-dropdown .dropdown-menu li a:hover {
   background-color: #575757;
-  color: #ffcc00; /* Highlight color */
+  color: #ffcc00; 
 }
 
 
@@ -660,4 +669,24 @@ footer{
   /* .genre-dropdown {
       display: none; 
   } */
+}
+
+@media(max-width:1000px){
+  .bbttnn{
+    max-width: fit-content;
+    padding: 3px;
+    margin-left: 30%;
+    margin-top: 48%;
+    top: 0;
+    background-color: rgb(98, 18, 98);
+    position: absolute;
+    border: solid 6px rgb(98, 18, 98);
+    border-radius: 10px;
+}
+  
+.bbttnn a{
+    font-size: 15px;
+    text-decoration: none;
+    color: #ffffff;
+}
 }

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Preview - YuruWatch</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="Animac.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: url('back.jpg') no-repeat center center/cover;
+            background-attachment: fixed;
+            scroll-behavior: smooth;
+            color: #ffffff;
+            position: relative;
+        }
+
+        .container {
+            position: relative;
+            z-index: 2;
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Bookmark dropdown styling */
+        .bookmark-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .bookmark-dropdown {
+            display: none;
+            position: absolute;
+            top: 40px;
+            right: 0;
+            background-color: #1a1a1a;
+            min-width: 200px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            z-index: 1;
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: all 0.4s ease;
+        }
+
+        .bookmark-container.active .bookmark-dropdown {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .bookmark-dropdown a {
+            color: #ffffff;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            border-bottom: 1px solid #333;
+        }
+
+        .bookmark-dropdown a:last-child {
+            border-bottom: none;
+        }
+
+        .bookmark-dropdown a:hover {
+            background-color: #5B3256;
+            color: #ffffff;
+        }
+
+        .btn-bookmark {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .btn-bookmark:hover {
+            color: #FFD700;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Main Anime Preview Section -->
+    <section class="anime-preview-section" style="margin: 80px ;">
+        <div class="container my-5">
+            <div class="row">
+                <!-- Anime Poster -->
+                <div class="col-md-5">
+                    <img src="slider10.jpg" alt="Anime Poster" class="img-fluid shadow">
+                </div>
+
+                <!-- Anime Details -->
+                <div class="col-md-7">
+                    <h1 style="font-weight: 700;">Anime Title</h1>
+                    <p><strong>Genres:</strong> Action, Fantasy, Adventure</p>
+                    <p><strong>Release Date:</strong> January 1, 2022</p>
+                    <p><strong>Description:</strong> A gripping tale that follows the journey of a young warrior discovering hidden powers and facing dangerous foes in a mystical world.</p>
+
+                    <!-- Buttons for Watch Now and Add to Watchlist -->
+                    <div class="mt-4">
+                        <a href="watch-now-link.html" class="btn btn-primary me-2">Watch Now</a>
+
+                        <!-- Bookmark with dropdown -->
+                        <div class="bookmark-container">
+                            <button class="btn-bookmark" onclick="toggleDropdown()">
+                                <ion-icon name="bookmark-outline"></ion-icon>
+                            </button>
+                            <div class="bookmark-dropdown">
+                                <a href="#">Add to Watchlist</a>
+                                <a href="#">Mark as Watched</a>
+                                <a href="#">Recommend</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap JS -->
+    <script>
+        // Toggle the dropdown menu visibility
+        function toggleDropdown() {
+            const bookmarkContainer = document.querySelector('.bookmark-container');
+            bookmarkContainer.classList.toggle('active');
+        }
+
+        // Close the dropdown if clicked outside
+        window.onclick = function(event) {
+            if (!event.target.matches('.btn-bookmark') && !event.target.matches('ion-icon')) {
+                const dropdown = document.querySelector('.bookmark-container');
+                if (dropdown.classList.contains('active')) {
+                    dropdown.classList.remove('active');
+                }
+            }
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

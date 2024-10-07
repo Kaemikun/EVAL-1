@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Preview - YuruWatch</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="Animac.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            box-sizing: border-box;
+        }
+
+        .body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: url('back.jpg') no-repeat center center/cover;
+            background-attachment: fixed;
+            scroll-behavior: smooth;
+            color: #ffffff;
+            position: relative;
+        }
+
+        /* body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            backdrop-filter: blur(10px); 
+            background: rgba(0, 0, 0, 0.5); 
+            z-index: 1;
+        } */
+
+        .container {
+            position: relative;
+            z-index: 2;
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .video-section {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%; 
+            background-color: #000;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            margin-top: 100px;
+        }
+
+        video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+        }
+
+        .title-section {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .title-section h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        .title-section p {
+            font-size: 1.1rem;
+            margin: 10px 0;
+            color: #b3b3b3;
+        }
+
+        .episode-list {
+            margin-top: 20px;
+        }
+
+        .episode-list h2 {
+          color: white;
+            font-size: 2rem;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .episode-list ul {
+            margin-left: 50px;
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .episode-list li {
+            width: 100%;
+            color: #ffffff;
+            background-color: #130f2f;
+            max-width: 340px;
+            padding: 10px 20px;
+            border: 1px solid #333;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: left;
+            margin: 10px 0;
+            transition: border-color 0.3s, color 0.3s;
+        }
+
+        .episode-list li:hover {
+            border-color: gold;
+            color: gold;
+        }
+
+        @media (min-width: 768px) {
+            
+            .title-section h1 {
+                font-size: 3rem;
+            }
+
+            .episode-list ul {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .episode-list li {
+                width: 45%;
+                margin: 10px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .title-section h1 {
+                font-size: 3.5rem;
+            }
+
+            .episode-list ul {
+                justify-content: flex-start;
+            }
+
+            .episode-list li {
+                width: 30%;
+                margin: 10px;
+            }
+            
+        }
+
+        
+        .comment-section {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: rgba(19, 31, 47, 0.9); 
+            border-radius: 10px;
+            color: #ffffff;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .comment-section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #5B3256; 
+        }
+
+        .comment-form {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 30px;
+        }
+
+        .comment-form textarea {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #162938;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            resize: none;
+            min-height: 100px;
+            margin-bottom: 10px;
+            font-size: 1em;
+            width: 100%;
+            transition: border 0.3s;
+        }
+
+        .comment-form textarea:focus {
+            border-color: #5B3256;
+        }
+
+        .comment-form button {
+            align-self: flex-end;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #5B3256;
+            color: #ffffff;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s;
+        }
+
+        .comment-form button:hover {
+            background-color: #5B3256;
+        }
+
+        .comment-list .comment {
+            padding: 15px;
+            border-bottom: 1px solid #333;
+            margin-bottom: 10px;
+        }
+
+        .comment-list .comment p {
+            margin: 0;
+            font-size: 1em;
+        }
+
+        .comment-list .comment .comment-author {
+            font-weight: bold;
+            margin-right: 10px;
+            color: #5B3256;
+        }
+
+        .comment-list .comment .comment-time {
+            color: #b3b3b3;
+            font-size: 0.9em;
+        }
+
+        .recently-released {
+  padding: 80px 20px;
+  background-color: rgba(19, 31, 47, 0.95); 
+  border-radius: 15px;
+  margin-top: 50px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); 
+}
+
+.recently-released h2 {
+  font-size: 1.2rem; 
+  color: #f5f5f5; 
+  text-align: left;
+  margin-bottom: 40px;
+  letter-spacing: 1px; 
+}
+
+.anime-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 60px; 
+}
+
+.anime-item {
+  display: flex;
+  align-items: center;
+  background-color: #0d0d0d; 
+  padding: 20px;
+  border-radius: 15px;
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.anime-item:hover {
+  transform: translateY(-5px); 
+  box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.4); 
+  background-color: #1a1a1a; 
+}
+
+.anime-item img {
+  width: 110px;
+  height: auto;
+  border-radius: 10px;
+  margin-right: 25px;
+  
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3); 
+}
+
+.anime-info h3 {
+  font-size: 1.2rem; 
+  margin: 0;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.anime-info p {
+  font-size: 1rem;
+  margin: 5px 0;
+  color: #b3b3b3;
+}
+
+.anime-info h3, .anime-info p {
+  transition: color 0.3s;
+}
+
+.anime-item:hover .anime-info h3 {
+  color: #FFD700; 
+}
+
+.anime-item:hover .anime-info p {
+  color: #e0e0e0; 
+}
+    @media (max-width: 768px) {
+        .recently-released{
+            display: none;
+        }
+    }
+   
+    .bookmark-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .bookmark-dropdown {
+            display: none;
+            position: absolute;
+            top: 40px;
+            right: -170px;
+            background-color: #1a1a1a;
+            min-width: 200px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            z-index: 1;
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: all 0.4s ease;
+        }
+
+        .bookmark-container.active .bookmark-dropdown {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .bookmark-dropdown a {
+            color: #ffffff;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            border-bottom: 1px solid #333;
+        }
+
+        .bookmark-dropdown a:last-child {
+            border-bottom: none;
+        }
+
+        .bookmark-dropdown a:hover {
+            background-color: #162938;
+            color: #ffffff;
+        }
+
+        .btn btn-secondary {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .btn btn-secondary:hover {
+            color: #FFD700;
+        }
+
+
+    </style>
+</head>
+<body>
+
+  <header>
+    <h2 class="logo">
+        <a href="YuruWatch.html">
+            <img src="WhatsApp_Image_2024-08-29_at_23.40.32_04afab5b-removebg-preview.png" style="height: 7vh;">
+        </a>
+    </h2>
+    <nav class="navigation">
+        <ul id="menu">
+            <li><a href="YuruWatch.html">Home</a></li>
+            <li><a href="#">Community</a></li>
+            <li class="genre-dropdown">
+                <a href="#" class="dropdown-toggle">Genre</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Adventure</a></li>
+                    <li><a href="#">Comedy</a></li>
+                    <li><a href="#">Drama</a></li>
+                    <li><a href="#">Fantasy</a></li>
+                    <li><a href="#">Horror</a></li>
+                    <li><a href="#">Mystery</a></li>
+                    <li><a href="#">Romance</a></li>
+                    <li><a href="#">Sci-Fi</a></li>
+                    <li><a href="#">Slice of Life</a></li>
+                    <li><a href="#">Sports</a></li>
+                    <li><a href="#">Thriller</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="search-bar">
+                    <input type="list" list = "browsers" placeholder="Search..." onchange="location = this.value;">
+                    <datalist id="browsers">
+                      <option value="codegeass.html">Code Geass</option>
+                      <option value="rimuru.html">That time I got reincarnated as a Slime</option>
+                      <option value="aot.html">Attack On Titans</option>
+                      <option value="yourname.html">Your Name</option>
+                      <!-- <option value="Safari"> -->
+                    </datalist>
+                    <span class="search-icon"><ion-icon name="search"></ion-icon></span>
+                </div>
+            </li>
+            <li><a href="Account.html"><img src="iccon-removebg-preview.png" alt="Icon"></li></a>
+        </ul>
+        <div class="menu-toggle" id="menuToggle">
+            <ion-icon name="menu"></ion-icon>
+        </div>
+    </nav>
+</header>
+
+<div class="body">
+  
+  <section class="anime-preview-section" style="margin: 80px ;">
+    <div class="container my-5">
+      <div class="row">
+        
+        <div class="col-md-5">
+          <img src="slider9.jpg" alt="Anime Poster" class="img-fluid shadow">
+        </div>
+
+        
+        <div class="col-md-7" style="margin-top: 20px; ">
+          <h1 style="font-weight: 700; ">Code Geass</h1>
+          <p><strong>Genres:</strong> Action, Drama, Mecha, School, Sci-Fi</p>
+          <p><strong>Release Date:</strong> Oct 6, 2006</p>
+          <p><strong>Description:</strong> In the year 2010, the Holy Empire of Britannia is establishing itself as a dominant military nation, starting with the conquest of Japan. Renamed to Area 11 after its swift defeat, Japan has seen significant resistance against these tyrants in an attempt to regain independence. Lelouch Lamperouge, a Britannian student, unfortunately finds himself caught in a crossfire between the Britannian and the Area 11 rebel armed forces. He is able to escape, however, thanks to the timely appearance of a mysterious girl named C.C., who bestows upon him Geass, the "Power of Kings.</p>
+
+          
+          <div class="mt-4">
+            <a href="codegeass.html" class="btn btn-primary me-2">Watch Now</a>
+            
+             <div class="bookmark-container">
+              <button class="btn btn-secondary" onclick="toggleDropdown()">
+                  <ion-icon name="bookmark-outline"></ion-icon>
+              </button>
+              <div class="bookmark-dropdown">
+                  <a href="#">Want to Watch</a>
+                  <a href="#">Currently Watching</a>
+                  <a href="#">On Hold</a>
+                  <a href="#">Completed</a>
+              </div>
+          </div>
+            <!-- <a href="add-to-watchlist-link.html" class="btn btn-secondary"><ion-icon name="bookmark-outline"></ion-icon></a> -->
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="recently-released">
+    <h2>Recently Released</h2>
+    <div class="anime-list">
+      
+      <div class="anime-item">
+        <a href="rimuru_prev.html">
+          <img src="slider11.jpg" alt="Ore Dake Level Up na Ken (Dub)">
+          <div class="anime-info">
+            <h3>Reincarnated As a Slime</h3>
+            <p>Episode 12</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="anime-item">
+        <a href="anime_prev.html">
+          <img src="slider5.jpg" alt="Another Anime">
+          <div class="anime-info">
+            <h3>Attack on Titans</h3>
+            <p>Episode 10</p>
+          </div>
+        </a>
+      </div>
+     
+    </div>
+  </section>
+  </div>
+  <div class="episode-list">
+    <h2>Episodes</h2>
+    <ul>
+        <li>Episode 1</li>
+        <li>Episode 2</li>
+        <li>Episode 3</li>
+        <li>Episode 4</li>
+        <li>Episode 5</li>
+        <li>Episode 6</li>
+      <li>Episode 7</li>
+      <li>Episode 8</li>
+      <li>Episode 9</li>
+      <li>Episode 10</li>
+      <li>Episode 11</li>
+      <li>Episode 12</li>
+      <li>Episode 13</li>
+      <li>Episode 14</li>
+      <li>Episode 15</li>
+    </ul>
+</div>
+
+ 
+  <script>
+    
+    function toggleDropdown() {
+        const bookmarkContainer = document.querySelector('.bookmark-container');
+        bookmarkContainer.classList.toggle('active');
+    }
+
+   
+    window.onclick = function(event) {
+        if (!event.target.matches('.btn btn-secondary') && !event.target.matches('ion-icon')) {
+            const dropdown = document.querySelector('.bookmark-container');
+            if (dropdown.classList.contains('active')) {
+                dropdown.classList.remove('active');
+            }
+        }
+    }
+</script>
+
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+  const menu = document.getElementById('menu');
+  
+  menuToggle.addEventListener('click', () => {
+  menu.classList.toggle('active');
+  });
+  </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
