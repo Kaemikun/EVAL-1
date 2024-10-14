@@ -332,6 +332,42 @@
     menu.classList.toggle('active');
 });
     </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const commentForm = document.querySelector('.comment-form');
+            const commentTextarea = commentForm.querySelector('textarea');
+            const commentList = document.querySelector('.comment-list');
+            const submitButton = commentForm.querySelector('button');
+    
+            submitButton.addEventListener('click', function() {
+               
+                const commentText = commentTextarea.value.trim();
+    
+                
+                if (commentText) {
+                    
+                    const newComment = document.createElement('div');
+                    newComment.classList.add('comment');
+                    
+                   
+                    const now = new Date();
+                    const time = now.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'});
+    
+                    
+                    newComment.innerHTML = `
+                        <p><span class="comment-author">User:</span> ${commentText}</p>
+                        <p class="comment-time">${time}</p>
+                    `;
+    
+                    
+                    commentList.appendChild(newComment);
+    
+                    
+                    commentTextarea.value = '';
+                }
+            });
+        });
+    </script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
