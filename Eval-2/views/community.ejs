@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/community.css">
+</head>
+<body>
+    <header>
+        <h2 class="logo">
+            <a href="/">
+                <img src="WhatsApp_Image_2024-08-29_at_23.40.32_04afab5b-removebg-preview.png" style="height: 7vh;">
+            </a>
+        </h2>
+        <nav class="navigation">
+            <ul id="menu">
+                <li><a href="/">Home</a></li>
+                <li><a href="/community">Community</a></li>
+                <li class="genre-dropdown">
+                    <a href="#" class="dropdown-toggle">Genre</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Adventure</a></li>
+                        <li><a href="#">Comedy</a></li>
+                        <li><a href="#">Drama</a></li>
+                        <li><a href="#">Fantasy</a></li>
+                        <li><a href="#">Horror</a></li>
+                        <li><a href="#">Mystery</a></li>
+                        <li><a href="#">Romance</a></li>
+                        <li><a href="#">Sci-Fi</a></li>
+                        <li><a href="#">Slice of Life</a></li>
+                        <li><a href="#">Sports</a></li>
+                        <li><a href="#">Thriller</a></li>
+                    </ul>
+                </li>
+                <li>
+                  <div class="search-bar">
+                      <input type="list" list = "browsers" placeholder="Search..." onchange="location = this.value;">
+                      <span class="search-icon"><ion-icon name="search"></ion-icon></span>
+                  </div>
+              </li>
+                <li><a href="/account"><img src="iccon-removebg-preview.png" alt="Icon"></li></a>
+            </ul>
+            <div class="menu-toggle" id="menuToggle">
+                <ion-icon name="menu"></ion-icon>
+            </div>
+        </nav>
+    </header>
+    
+    
+        <section style="height: 95px;"></section>
+
+        <section style="display: flex;">
+            <div class="left">
+                <h1>Profile</h1>
+            </div>
+
+            <div class="main-mid">
+                <div class="comment-form">
+                    <textarea placeholder="What's on your mind..."></textarea>
+                    <button type="button">Submit</button>
+                </div>
+                <div class="comment">
+                    <p><span class="comment-author">User1:</span> Definitely a masterpiece 💯 Worth watching it Just feels amazing 😍</p>
+                    <p class="comment-time">5 minutes ago</p>
+                </div>
+                <div class="comment">
+                    <p><span class="comment-author">User2:</span> So glad I finally watched this. has to be one of my fav without a doubt.</p>
+                    <p class="comment-time">10 minutes ago</p>
+                </div>
+                <div class="comment">
+                    <p><span class="comment-author">User1:</span> Definitely a masterpiece 💯 Worth watching it Just feels amazing 😍</p>
+                    <p class="comment-time">5 minutes ago</p>
+                </div>
+                <div class="comment">
+                    <p><span class="comment-author">User2:</span> So glad I finally watched this. has to be one of my fav without a doubt.</p>
+                    <p class="comment-time">10 minutes ago</p>
+                </div>
+                <div class="comment">
+                    <p><span class="comment-author">User1:</span> Definitely a masterpiece 💯 Worth watching it Just feels amazing 😍</p>
+                    <p class="comment-time">5 minutes ago</p>
+                </div>
+                <div class="comment">
+                    <p><span class="comment-author">User2:</span> So glad I finally watched this. has to be one of my fav without a doubt.</p>
+                    <p class="comment-time">10 minutes ago</p>
+                </div>
+                <div class="comment">
+                    <p><span class="comment-author">User1:</span> Definitely a masterpiece 💯 Worth watching it Just feels amazing 😍</p>
+                    <p class="comment-time">5 minutes ago</p>
+                </div>
+                <div class="comment">
+                    <p><span class="comment-author">User2:</span> So glad I finally watched this. has to be one of my fav without a doubt.</p>
+                    <p class="comment-time">10 minutes ago</p>
+                </div>
+            </div>
+
+            <div class="right"></div>
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <script>
+            const menuToggle = document.getElementById('menuToggle');
+          const menu = document.getElementById('menu');
+          
+          menuToggle.addEventListener('click', () => {
+          menu.classList.toggle('active');
+          });
+          </script>
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+          <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+          <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+              
+            
+        
+    
+</body>
+</html>

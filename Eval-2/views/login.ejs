@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="/styles2.css">
+</head>
+<body>
+    <header>
+        <h2 class="logo"><a href="#"><img src="WhatsApp_Image_2024-08-29_at_23.40.32_04afab5b-removebg-preview.png" style="height: 7vh;"></a></h2>
+        <nav class="navigation">
+            <ul id="menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Community</a></li>
+            </ul>
+            <div class="menu-toggle" id="menuToggle">
+                <ion-icon name="menu"></ion-icon>
+            </div>
+        </nav>
+    </header>
+
+    
+
+    <section>
+        <div class="con">
+            <center><h2>Login</h2></center>
+    <form action="/login" method="POST">
+        
+        <div>          
+            <span>
+                <label for="email">Email</label>
+                &#x2709;
+                
+            </span><br>
+            <input type="email" name="email" id="email" placeholder="Enter your email..." required>
+        </div>
+    
+        <div>
+                    <label for="password">Password</label>
+                    &#x1F512;
+                
+                    </span><br>
+                    <input type="password" id="password" name="password" placeholder="Enter your password..." required>
+        </div>
+        
+    
+        <button type="submit">Login</button>
+    </form>
+    <p>Don't have an account? <a href="/register">Register here</a></p>
+    <div>
+            <% if(messages.error){ %>
+                <div class="alert">
+                    <strong><%= messages.error %></strong>
+                </div>
+            <% } %>
+    </div>
+        </div>
+        
+    </section>
+
+    
+
+    <script src="/script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
