@@ -1,0 +1,361 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+.body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('back.jpg') no-repeat center center/cover;
+    background-attachment: fixed;
+    scroll-behavior: smooth;
+    color: #ffffff;
+    position: relative;
+}
+
+/* body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(10px); 
+    background: rgba(0, 0, 0, 0.5); 
+    z-index: 1;
+} */
+
+.container {
+    position: relative;
+    z-index: 2;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.video-section {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; 
+    background-color: #000;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    margin-top: 100px;
+}
+
+video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.title-section {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.title-section h1 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.title-section p {
+    font-size: 1.1rem;
+    margin: 10px 0;
+    color: #b3b3b3;
+}
+
+.episode-list {
+    margin-top: 20px;
+}
+
+.episode-list h2 {
+  color: white;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.episode-list ul {
+    margin-left: 50px;
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.episode-list li {
+    width: 100%;
+    color: #ffffff;
+    background-color: #130f2f;
+    max-width: 340px;
+    padding: 10px 20px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: left;
+    margin: 10px 0;
+    transition: border-color 0.3s, color 0.3s;
+}
+
+.episode-list li:hover {
+    border-color: gold;
+    color: gold;
+}
+
+@media (min-width: 768px) {
+    
+    .title-section h1 {
+        font-size: 3rem;
+    }
+
+    .episode-list ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .episode-list li {
+        width: 45%;
+        margin: 10px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .title-section h1 {
+        font-size: 3.5rem;
+    }
+
+    .episode-list ul {
+        justify-content: flex-start;
+    }
+
+    .episode-list li {
+        width: 30%;
+        margin: 10px;
+    }
+    
+}
+
+
+.comment-section {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: rgba(19, 31, 47, 0.9); 
+    border-radius: 10px;
+    color: #ffffff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.comment-section h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #5B3256; 
+}
+
+.comment-form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+.comment-form textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #162938;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    resize: none;
+    min-height: 100px;
+    margin-bottom: 10px;
+    font-size: 1em;
+    width: 100%;
+    transition: border 0.3s;
+}
+
+.comment-form textarea:focus {
+    border-color: #5B3256;
+}
+
+.comment-form button {
+    align-self: flex-end;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #5B3256;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+.comment-form button:hover {
+    background-color: #5B3256;
+}
+
+.comment-list .comment {
+    padding: 15px;
+    border-bottom: 1px solid #333;
+    margin-bottom: 10px;
+}
+
+.comment-list .comment p {
+    margin: 0;
+    font-size: 1em;
+}
+
+.comment-list .comment .comment-author {
+    font-weight: bold;
+    margin-right: 10px;
+    color: #5B3256;
+}
+
+.comment-list .comment .comment-time {
+    color: #b3b3b3;
+    font-size: 0.9em;
+}
+
+.recently-released {
+padding: 80px 20px;
+background-color: rgba(19, 31, 47, 0.95); 
+border-radius: 15px;
+margin-top: 50px;
+box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); 
+}
+
+.recently-released h2 {
+font-size: 1.2rem; 
+color: #f5f5f5;
+text-align: left;
+margin-bottom: 40px;
+letter-spacing: 1px; 
+}
+
+.anime-grid {
+display: flex;
+flex-direction: column;
+gap: 60px; 
+}
+
+.anime-item {
+display: flex;
+align-items: center;
+background-color: #0d0d0d; 
+padding: 20px;
+border-radius: 15px;
+transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); 
+}
+
+.anime-item:hover {
+transform: translateY(-5px); 
+box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.4); 
+background-color: #1a1a1a; 
+}
+
+.anime-item img {
+width: 110px; 
+height: auto;
+border-radius: 10px;
+margin-right: 25px;
+
+box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3); 
+}
+
+.anime-info h3 {
+font-size: 1.2rem; 
+margin: 0;
+color: #ffffff;
+font-weight: 500;
+}
+
+.anime-info p {
+font-size: 1rem;
+margin: 5px 0;
+color: #b3b3b3;
+}
+
+.anime-info h3, .anime-info p {
+transition: color 0.3s;
+}
+
+.anime-item:hover .anime-info h3 {
+color: #FFD700; 
+}
+
+.anime-item:hover .anime-info p {
+color: #e0e0e0; 
+}
+@media (max-width: 768px) {
+.recently-released{
+    display: none;
+}
+}
+
+.bookmark-container {
+    position: relative;
+    display: inline-block;
+}
+
+.bookmark-dropdown {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: -170px;
+    background-color: #1a1a1a;
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    z-index: 1;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.4s ease;
+}
+
+.bookmark-container.active .bookmark-dropdown {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.bookmark-dropdown a {
+    color: #ffffff;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border-bottom: 1px solid #333;
+}
+
+.bookmark-dropdown a:last-child {
+    border-bottom: none;
+}
+
+.bookmark-dropdown a:hover {
+    background-color: #162938;
+    color: #ffffff;
+}
+
+.btn btn-secondary {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.btn btn-secondary:hover {
+    color: #FFD700;
+}
+

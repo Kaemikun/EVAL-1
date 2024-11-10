@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+    <link rel="stylesheet" href="pro.css">
+    <link rel="stylesheet" href="/styles2.css">
+</head>
+<body>
+    <header>
+        <h2 class="logo">
+            <a href="/">
+                <img src="WhatsApp_Image_2024-08-29_at_23.40.32_04afab5b-removebg-preview.png" style="height: 7vh;">
+            </a>
+        </h2>
+        <nav class="navigation">
+            <ul id="menu">
+                <li><a href="/">Home</a></li>
+                <li><a href="/community">Community</a></li>
+                
+                <li>
+                    <div class="search-bar">
+                        <input type="list" list = "browsers" placeholder="Search..." onchange="location = this.value;">
+                        <datalist id="browsers">
+                          <option value="codegeass.html">Code Geass</option>
+                          <option value="rimuru.html">That time I got reincarnated as a Slime</option>
+                          <option value="aot.html">Attack On Titans</option>
+                          <option value="yourname.html">Your Name</option>
+                          <!-- <option value="Safari"> -->
+                        </datalist>
+                        <span class="search-icon"><ion-icon name="search"></ion-icon></span>
+                    </div>
+                </li>
+                <li><a href="Account.html"><img src="iccon-removebg-preview.png" alt="Icon"></li></a>
+            </ul>
+            <div class="menu-toggle" id="menuToggle">
+                <ion-icon name="menu"></ion-icon>
+            </div>
+        </nav>
+    </header>
+    <div class="form-container">
+        <h2>Your Feedback Is Important For Us</h2>
+        <form id="feedbackForm">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" placeholder="Enter Your Name">
+                <span class="error" id="nameError"></span>
+            </div>
+            <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" id="email" placeholder="Enter email">
+                <span class="error" id="emailError"></span>
+            </div>
+            <div class="form-group">
+                <label for="contact">Contact Number (Optional)</label>
+                <input type="text" id="contact" placeholder="Enter contact number">
+            </div>
+            <div class="form-group">
+                <label for="anime">Favorite Anime</label>
+                <input type="text" id="recommendation" placeholder="Enter your favourite anime">
+            </div>
+            <div class="form-group">
+                <label for="recommendation">Recommend Anime</label>
+                <input type="text" id="recommendation" placeholder="Recommend an anime">
+                <span class="error" id="recommendationError"></span>
+            </div>
+            <div class="form-group">
+                <label for="feedback">Feedback</label>
+                <textarea id="feedback" placeholder="Enter your feedback"></textarea>
+                <span class="error" id="feedbackError"></span>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+      const menu = document.getElementById('menu');
+      
+      menuToggle.addEventListener('click', () => {
+      menu.classList.toggle('active');
+      });
+      </script>
+
+    <script src="proj.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

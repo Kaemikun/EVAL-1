@@ -232,19 +232,46 @@
 </head>
 <body>
     <header>
-        <h2 class="logo"><a href="YuruWatch.html"><img src="WhatsApp_Image_2024-08-29_at_23.40.32_04afab5b-removebg-preview.png" style="height: 7vh;"></a></h2>
+        <h2 class="logo">
+            <a href="YuruWatch.html">
+                <img src="WhatsApp_Image_2024-08-29_at_23.40.32_04afab5b-removebg-preview.png" style="height: 7vh;">
+            </a>
+        </h2>
         <nav class="navigation">
             <ul id="menu">
                 <li><a href="YuruWatch.html">Home</a></li>
                 <li><a href="#">Community</a></li>
-                <li><a href="#">Genre</a></li>
+                <li class="genre-dropdown">
+                    <a href="#" class="dropdown-toggle">Genre</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Adventure</a></li>
+                        <li><a href="#">Comedy</a></li>
+                        <li><a href="#">Drama</a></li>
+                        <li><a href="#">Fantasy</a></li>
+                        <li><a href="#">Horror</a></li>
+                        <li><a href="#">Mystery</a></li>
+                        <li><a href="#">Romance</a></li>
+                        <li><a href="#">Sci-Fi</a></li>
+                        <li><a href="#">Slice of Life</a></li>
+                        <li><a href="#">Sports</a></li>
+                        <li><a href="#">Thriller</a></li>
+                    </ul>
+                </li>
                 <li>
                     <div class="search-bar">
-                        <input type="text" placeholder="Search...">
+                        <input type="list" list = "browsers" placeholder="Search..." onchange="location = this.value;">
+                        <datalist id="browsers">
+                          <option value="codegeass.html">Code Geass</option>
+                          <option value="rimuru.html">That time I got reincarnated as a Slime</option>
+                          <option value="aot.html">Attack On Titans</option>
+                          <option value="yourname.html">Your Name</option>
+                          <!-- <option value="Safari"> -->
+                        </datalist>
                         <span class="search-icon"><ion-icon name="search"></ion-icon></span>
                     </div>
                 </li>
-                <li><img src="iccon-removebg-preview.png"></li>
+                <li><a href="Account.html"><img src="iccon-removebg-preview.png" alt="Icon"></li></a>
             </ul>
             <div class="menu-toggle" id="menuToggle">
                 <ion-icon name="menu"></ion-icon>
@@ -262,7 +289,7 @@
         </div>
 
         <div class="title-section">
-            <h1>The Day a New Demon Was Born </h1>
+            <h1>Episode Title</h1>
             <p>Season 1, Episode 1</p>
             <p>In the year 2010, the Holy Empire of Britannia is establishing itself as a dominant military nation, starting with the conquest of Japan. Renamed to Area 11 after its swift defeat, Japan has seen significant resistance against these tyrants in an attempt to regain independence. Lelouch Lamperouge, a Britannian student, unfortunately finds himself caught in a crossfire between the Britannian and the Area 11 rebel armed forces. He is able to escape, however, thanks to the timely appearance of a mysterious girl named C.C., who bestows upon him Geass, the "Power of Kings." Realizing the vast potential of his newfound "power of absolute obedience," Lelouch embarks upon a perilous journey as the masked vigilante known as Zero, leading a merciless onslaught against Britannia in order to get revenge once and for all. [Written by MAL Rewrite] </p>
         </div>
@@ -305,6 +332,42 @@
     menuToggle.addEventListener('click', () => {
     menu.classList.toggle('active');
 });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const commentForm = document.querySelector('.comment-form');
+            const commentTextarea = commentForm.querySelector('textarea');
+            const commentList = document.querySelector('.comment-list');
+            const submitButton = commentForm.querySelector('button');
+    
+            submitButton.addEventListener('click', function() {
+               
+                const commentText = commentTextarea.value.trim();
+    
+                
+                if (commentText) {
+                    
+                    const newComment = document.createElement('div');
+                    newComment.classList.add('comment');
+                    
+                   
+                    const now = new Date();
+                    const time = now.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'});
+    
+                    
+                    newComment.innerHTML = `
+                        <p><span class="comment-author">User:</span> ${commentText}</p>
+                        <p class="comment-time">${time}</p>
+                    `;
+    
+                    
+                    commentList.appendChild(newComment);
+    
+                    
+                    commentTextarea.value = '';
+                }
+            });
+        });
     </script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
